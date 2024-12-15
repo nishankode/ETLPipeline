@@ -83,5 +83,10 @@ with DAG (
     # Step 5: verifying the data with DBViewer
 
     # Step 6: Define the task dependencies
-
-    pass
+    # Extract
+    create_table() >> extract_apod # Ensuring the table is created before extraction
+    api_response = extract_apod.output
+    # Transform
+    transformed_data = transform_apod_data(api_response)
+    # Load
+    load_data_to_postgres(transformed_data)
