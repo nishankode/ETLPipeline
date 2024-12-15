@@ -81,6 +81,7 @@ with DAG (
         ))
 
     # Step 5: verifying the data with DBViewer
+    # (Download DBeaver and connect with the postgres database)
 
     # Step 6: Define the task dependencies
     # Extract
